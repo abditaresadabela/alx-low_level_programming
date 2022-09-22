@@ -1,18 +1,24 @@
 #include "main.h"
-
 /**
- * string_toupper - a function that changes all lower of a string to upper
- * @n: input string
- * Return: capitialized string
+ * reverse_array - reverses an array
+ * @a: an array of integers
+ * @n: number of elements of an array
+ *
  */
-char *string_toupper(char *n)
+void reverse_array(int *a, int n)
 {
 	int i;
+	int temp;
 
-	for (i = 0; n[i] != '\0'; i++)
+	i = 0;
+	n = n - 1;
+
+	while (i < n)
 	{
-		if (n[i] >= 'a' && n[i] <= 'z')
-			n[i] = n[i] - 32;
+		temp = a[i];
+		a[i] = a[n];
+		a[n] = temp;
+		i++;
+		n--;
 	}
-	return (n);
 }
