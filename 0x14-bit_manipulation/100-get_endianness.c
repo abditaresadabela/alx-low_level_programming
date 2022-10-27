@@ -1,21 +1,15 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * get_endianness - function that checks the endianness
- * https://stackoverflow.com/questions/12791864/c-program-to-check-little-vs
- * -big-endian
- * Return: 0 if big endian, 1 if little endian
+ * get_endianness - Write a function that checks the endianness.
+ * Prototype: int get_endianness(void).
+ * Return: 1, if architecture is little endian, 0 in case of big endian.
  */
-
 int get_endianness(void)
 {
-	int x = 1;
+	unsigned int x = 1;
+	char *c = (char *) &x;
 
-	char *y = (char *)&x;
-
-	if (*y + 48 == 0)
-		return (0);
-
-	else
-		return (1);
+	return ((int)*c);
 }
